@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    [SerializeField] private GameObject[] doors;
+    [SerializeField] private Animator[] doors;
 
     private Animator animator;
 
@@ -15,9 +15,9 @@ public class Plate : MonoBehaviour
 
     public void SetState()
     {
-        foreach (var item in doors)
+        foreach (var door in doors)
         {
-            item.SetActive(!item.activeInHierarchy);
+            door.SetBool("open", !door.GetBool("open"));
         }
     }
 

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Lever : Interactable
 {
-
-    [SerializeField] private GameObject[] door;
+    [SerializeField] private Animator[] doors;
 
     private Animator animator;
 
@@ -20,9 +19,9 @@ public class Lever : Interactable
         {
             animator.SetBool("Used", !animator.GetBool("Used"));
         }
-        foreach (var item in door)
+        foreach (var door in doors)
         {
-            item.SetActive(!item.activeInHierarchy);
+            door.SetBool("open", !door.GetBool("open"));
         }
     }
 }
