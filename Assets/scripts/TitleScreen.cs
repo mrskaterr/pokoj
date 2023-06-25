@@ -8,21 +8,11 @@ public class TitleScreen : MonoBehaviour
     [SerializeField] GameObject Tutorial;
     public void OnPlayButton()
     {
-        //PlayerPrefs.SetInt ("Character", Character);
-        if(PlayerPrefs.GetInt("Record")!=0)
-        {
             Retry();
-        }
-        else 
-        {
-            Tutorial.SetActive(true);
-        }
-
-        
     }
     public void Retry()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(1);
     }
 
     public void Pasue()
